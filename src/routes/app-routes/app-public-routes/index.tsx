@@ -1,4 +1,5 @@
 import { LoginPage } from '../../../modules/auth/login';
+import { SignUpPage } from '../../../modules/auth/signup/pages/signup.page';
 import { PublicRoute } from '../../components/public-route';
 import { RootRedirect } from '../../components/root-route';
 import { HOME_ROUTE, LOGIN_ROUTE, SIGNUP_ROUTE } from '../../routes';
@@ -20,7 +21,7 @@ export const AppPublicRoutes = [
     path: SIGNUP_ROUTE,
     element: (
       <PublicRoute>
-        <h1> Signup Page </h1>
+        <SignUpPage />
       </PublicRoute>
     ),
   },
