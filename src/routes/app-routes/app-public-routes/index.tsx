@@ -1,3 +1,4 @@
+import { LoginPage } from '../../../modules/auth/login';
 import { PublicRoute } from '../../components/public-route';
 import { RootRedirect } from '../../components/root-route';
 import { HOME_ROUTE, LOGIN_ROUTE, SIGNUP_ROUTE } from '../../routes';
@@ -11,7 +12,7 @@ export const AppPublicRoutes = [
     path: LOGIN_ROUTE,
     element: (
       <PublicRoute>
-        <h1> Login Page </h1>
+        <LoginPage />
       </PublicRoute>
     ),
   },

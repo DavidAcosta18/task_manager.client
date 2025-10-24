@@ -1,3 +1,3 @@
-import NotFound from '@/routes/components/not-found';
+import NotFound from '../../components/not-found';
 
 export const AppCommonRoutes = [{ path: '*', element: <NotFound /> }];
