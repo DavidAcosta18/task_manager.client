@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useStorage } from './use-storage';
-import { apiAxiosInstance } from '@/api/config';
-import type { IUser } from '@/types/user.interfaces';
-import { REDIRECT_TO_LOCAL_STORAGE_KEY } from '@/constants';
-
+import type { IUser } from '../types/user.interfaces';
+import { apiAxiosInstance } from '../api/config';
+import { REDIRECT_TO_LOCAL_STORAGE_KEY } from '../constants';
 const LOCAL_STORAGE_TOKEN = 'token';
 const LOCAL_STORAGE_USER = 'user';
 
