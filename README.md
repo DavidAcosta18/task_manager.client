@@ -58,3 +58,10 @@ yarn dev
 ## Datos .env
 
 VITE_PUBLIC_API=http://localhost:4000
+
+Decisión Técnica,Razón e Impacto
+Se eligió para gestionar el estado del servidor (isLoading, caching, retries y sincronización de datos). Esto simplifica enormemente la lógica de la capa de datos en los componentes, ya que React Query maneja automáticamente la invalidación de caché (ej. actualizar la lista de proyectos tras una creación exitosa) y evita el prop drilling de estados de carga y error.
+
+Se optó por un panel lateral (Drawer) en lugar de un modal centrado para la vista de detalles de las tareas y comentarios. Esto mejora la UX permitiendo al usuario mantener el contexto visual del Tablero Kanban detrás del panel de detalles, facilitando la referencia visual de dónde se encuentra la tarea.
+
+Se usó Tailwind para construir utilidades y personalizaciones de bajo nivel, complementando a Ant Design. Esto garantiza que el proyecto tenga una apariencia moderna y consistente sin depender únicamente del diseño predefinido de Antd.
