@@ -10,7 +10,7 @@ export function PrivateLayout({ children }: IPrivateLayout) {
   return (
     <div className="flex h-screen">
       <NavigationBar />
-      <div className="flex-1">{children ?? <Outlet />}</div>
+      <div className="flex-1 ml-56">{children ?? <Outlet />}</div>
     </div>
   );
 }

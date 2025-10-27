@@ -1,7 +1,7 @@
 import { useCallback, useState, type ReactNode } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from './auth-context';
-import { DASHBOARD_ROUTE, LOGIN_ROUTE } from '../../routes/routes';
+import { LOGIN_ROUTE, PROJECTS_ROUTE } from '../../routes/routes';
 import { apiAxiosInstance } from '../../api/config';
 import type { IAuthResponse } from './auth-context.interfaces';
 
@@ -63,7 +63,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       if (redirectTo) {
         setPendingRedirect(redirectTo);
       } else {
-        navigate(DASHBOARD_ROUTE, { replace: true });
+        navigate(PROJECTS_ROUTE, { replace: true });
       }
     } catch {
       setUser(null);

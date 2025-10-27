@@ -2,74 +2,59 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+# 🚀 TaskFlow: Plataforma de Gestión de Proyectos Ágil
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📋 Descripción del Proyecto
 
-## React Compiler
+**TaskFlow** es una plataforma de gestión de tareas y proyectos, diseñada para equipos pequeños a medianos que buscan una herramienta sencilla y visual para organizar su trabajo. La aplicación permite a los usuarios:
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- Crear y gestionar proyectos con fechas de inicio y fin.
+- Visualizar tareas en un **Tablero Kanban** con estados personalizables ("To Do", "In Progress", "Completed").
+- Asignar tareas a miembros del equipo.
+- Ver detalles de la tarea, incluyendo un _feed_ de comentarios.
+- Mantener un registro de los usuarios del sistema.
 
-Note: This will impact Vite dev & build performances.
+El objetivo principal es proporcionar una experiencia de usuario fluida y reactiva mediante una arquitectura moderna de microservicios o monolito modular.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ⚙️ Tecnologías Utilizadas
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Este proyecto está construido con una arquitectura **Full-Stack** que utiliza las siguientes tecnologías y versiones principales:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+| Componente      | Tecnología                   | Versión Clave |
+| :-------------- | :--------------------------- | :------------ |
+| **Frontend**    | React / TypeScript           | 18.2.0        |
+| **Frontend UI** | Ant Design (Antd)            | 5.x           |
+| **Estilos**     | Tailwind CSS                 | 3.4.0         |
+| **State/Data**  | React Query (TanStack Query) | 5.x           |
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## ✅ Requisitos Previos
+
+Asegúrate de tener instalado lo siguiente en tu entorno de desarrollo:
+
+- **Node.js:** Versión `v18.x` o superior.
+- **yarn:** Versión `8.x` o superior.
+
+---
+
+## 🛠️ Instrucciones de Instalación Paso a Paso
+
+Sigue estos pasos para configurar y ejecutar el proyecto localmente.
+
+### 1. Clonar el Repositorio
+
+```bash
+git clone [https://github.com/DavidAcosta18/task_manager.client](https://github.com/DavidAcosta18/task_manager.client) TaskFlow
+git checkout develop
+cd TaskFlow
+yarn
+ ##Crear archivo .env y Añadir variables de entorno
+yarn dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Datos .env
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+VITE_PUBLIC_API=http://localhost:4000

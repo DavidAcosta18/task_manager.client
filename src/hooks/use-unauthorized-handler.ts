@@ -1,5 +1,5 @@
-import eventBus, { EventBusTypes } from '@/event-bus';
 import { useEffect } from 'react';
+import eventBus, { EventBusTypes } from '../event-bus';
 
 export function useUnauthorizedHandler(logout: () => void) {
   useEffect(() => {

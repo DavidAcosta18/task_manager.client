@@ -1,8 +1,9 @@
 import React from 'react';
 import { Can } from './can';
-import type { ActionsEnum } from '@/types/actions.enum';
-import type { SubjectsEnum } from '@/types/subjects.enum';
-import NotAllowed from '@/routes/components/not-allowed';
+
+import type { ActionsEnum } from '../../types/actions.enum';
+import type { SubjectsEnum } from '../../types/subjects.enum';
+import NotAllowed from '../../routes/components/not-allowed';
 
 interface CanRouteProps {
   I: ActionsEnum;

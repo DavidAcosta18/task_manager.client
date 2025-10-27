@@ -6,13 +6,17 @@ import { GlobalMessageHandler } from './global-message-handler';
 import { StorageProvider } from '../context/storage/storage-context.provider';
 import { AuthProvider } from '../context/auth/auth-context.provider';
 import { AbilityProvider } from '../context/ability/ability-context.provider';
+import { message } from 'antd';
 
 export function AppProviders({ children }: { children: React.ReactNode }) {
+  const [messageApi, contextHolder] = message.useMessage();
+
   return (
     <ReactQueryProvider>
       <StyleProvider layer>
         <AntDProvider>
-          <GlobalMessageHandler />
+          {contextHolder}
+          <GlobalMessageHandler messageApi={messageApi} />
           <StorageProvider>
             <AuthProvider>
               <AbilityProvider>{children}</AbilityProvider>

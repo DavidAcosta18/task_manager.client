@@ -19,6 +19,7 @@ export function defineAbilityFor(user?: any | null) {
     can(ActionsEnum.manage, SubjectsEnum.all);
   } else {
     can(ActionsEnum.read, SubjectsEnum.User);
+    can(ActionsEnum.create, SubjectsEnum.Project);
   }
 
   return build();

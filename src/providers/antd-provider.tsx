@@ -6,8 +6,10 @@ export function AntDProvider({ children }: { children: ReactNode }) {
     <ConfigProvider
       theme={{
         token: {
-          colorPrimary: '#FFB000',
-          colorLink: '#FFB000',
+          colorPrimary: '#023a78',
+          colorLink: '#f46f2e',
+          colorPrimaryHover: '#bfe7f4',
+          colorBgContainer: 'hsla(90, 100%, 96.47058823529412%, 0)',
         },
       }}
     >

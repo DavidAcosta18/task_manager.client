@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+
 import { useStorage } from './use-storage';
-import { REDIRECT_TO_LOCAL_STORAGE_KEY } from '@/constants';
+import { REDIRECT_TO_LOCAL_STORAGE_KEY } from '../constants';
 
 export function usePendingRedirect() {
   const [pendingRedirect, setPendingRedirect] = useState<string | null>(null);
