@@ -1,5 +1,5 @@
-import { ADMIN_ONLY_TEST_ROUTE, DASHBOARD_ROUTE, HOME_ROUTE, USERS_ROUTE } from '../routes/routes';
-import { FireFilled, HomeFilled, IdcardFilled } from '@ant-design/icons';
+import { HOME_ROUTE, PROJECTS_ROUTE, USERS_ROUTE } from '../routes/routes';
+import { HomeFilled, IdcardFilled } from '@ant-design/icons';
 import { NavigationLink } from './navigation-link';
 import { useLocation } from 'react-router-dom';
 
@@ -13,11 +13,11 @@ export function NavigationBar() {
       <div className="flex flex-col space-y-2">
         <NavigationLink
           className={navigationLinkClasses}
-          to={DASHBOARD_ROUTE}
-          isActive={pathname === HOME_ROUTE || pathname === DASHBOARD_ROUTE}
+          to={PROJECTS_ROUTE}
+          isActive={pathname === HOME_ROUTE || pathname === PROJECTS_ROUTE}
         >
           <HomeFilled />
-          <span>home</span>
+          <span>Projects</span>
         </NavigationLink>
         <NavigationLink
           className={navigationLinkClasses}
@@ -26,14 +26,6 @@ export function NavigationBar() {
         >
           <IdcardFilled />
           <span>users</span>
-        </NavigationLink>
-        <NavigationLink
-          className={navigationLinkClasses}
-          to={ADMIN_ONLY_TEST_ROUTE}
-          isActive={pathname === ADMIN_ONLY_TEST_ROUTE}
-        >
-          <FireFilled />
-          <span>admin only test</span>
         </NavigationLink>
       </div>
     </nav>

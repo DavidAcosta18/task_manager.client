@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { DASHBOARD_ROUTE } from '../routes';
+import { PROJECTS_ROUTE } from '../routes';
 
 export default function NotAllowed() {
   return (
@@ -30,7 +30,7 @@ export default function NotAllowed() {
           Si crees que esto es un error, contacta al administrador.
         </p>
         <Link
-          to={DASHBOARD_ROUTE}
+          to={PROJECTS_ROUTE}
           className="inline-block px-6 py-2 bg-cyan-600 text-white rounded hover:bg-cyan-700 transition"
         >
           Ir al inicio

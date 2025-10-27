@@ -1,9 +1,11 @@
 import { PrivateLayout } from '../../../components/layouts/private-layout';
 import { CanRoute } from '../../../context/ability/can-route';
+import ProjectPage from '../../../modules/projects/listProjects/pages/list-projects.page';
+import KanbanBoard from '../../../modules/tasks/pages/view-tasks.page';
 import { ActionsEnum } from '../../../types/actions.enum';
 import { SubjectsEnum } from '../../../types/subjects.enum';
 import { PrivateRoute } from '../../components/private-route';
-import { ADMIN_ONLY_TEST_ROUTE, DASHBOARD_ROUTE } from '../../routes';
+import { PROJECTS_ROUTE, VIEW_TASKS_ROUTE } from '../../routes';
 import { UserRoutes } from './user-routes';
 
 export const AppPrivateRoutes = [
@@ -15,22 +17,22 @@ export const AppPrivateRoutes = [
     ),
     children: [
       {
-        path: DASHBOARD_ROUTE,
+        path: PROJECTS_ROUTE,
         element: (
-          <CanRoute I={ActionsEnum.read} a={SubjectsEnum.Project}>
-            <h1> Dashboard Page </h1>
+          <CanRoute I={ActionsEnum.create} a={SubjectsEnum.Project}>
+            <ProjectPage />
+          </CanRoute>
+        ),
+      },
+      {
+        path: VIEW_TASKS_ROUTE,
+        element: (
+          <CanRoute I={ActionsEnum.create} a={SubjectsEnum.Project}>
+            <KanbanBoard />
           </CanRoute>
         ),
       },
       ...UserRoutes,
-      {
-        path: ADMIN_ONLY_TEST_ROUTE,
-        element: (
-          <CanRoute I={ActionsEnum.read} a={SubjectsEnum.all}>
-            <div>Ruta de test solo para admins</div>
-          </CanRoute>
-        ),
-      },
     ],
   },
 ];
