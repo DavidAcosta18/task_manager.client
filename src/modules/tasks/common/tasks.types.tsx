@@ -40,3 +40,11 @@ export interface Member {
   email: string;
   role: string;
 }
+export interface TaskComment {
+  id?: string;
+  taskId?: string;
+  userId: number;
+  author?: Member;
+  content: string;
+  createdAt: Dayjs | Date | string;
+}

@@ -3,6 +3,7 @@ import Card from 'antd/es/card/Card';
 import { ClockCircleOutlined, UserOutlined, ExclamationCircleOutlined } from '@ant-design/icons';
 
 import { TaskPriority, TaskStatus, type Task } from '../common/tasks.types';
+import { useNavigate } from 'react-router-dom';
 
 const PRIORITY_CONFIG: Record<TaskPriority, { color: string; text: string }> = {
   HIGH: { color: 'red', text: 'High' },
@@ -16,7 +17,7 @@ export const TaskCard: React.FC<{
 }> = ({ task, onStatusChange }) => {
   const assignee = task.assignee;
   const priority = PRIORITY_CONFIG[task.priority];
-
+  const navigator = useNavigate();
   const handleDragStart = (e: React.DragEvent) => {
     e.dataTransfer.setData('taskId', task.id as string);
   };
@@ -29,7 +30,12 @@ export const TaskCard: React.FC<{
       onDragStart={handleDragStart}
       className="mb-3 cursor-grab shadow-sm border border-gray-200 hover:shadow-md transition-shadow"
       extra={
-        <Button size="small" type="link" className="p-0">
+        <Button
+          size="small"
+          type="link"
+          className="p-0"
+          onClick={() => navigator(`/tasks/${task.id}`)}
+        >
           View
         </Button>
       }

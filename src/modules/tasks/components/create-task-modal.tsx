@@ -137,7 +137,6 @@ function CreateTaskModal() {
                 members?.map(member => (
                   <Option key={member.id as any} value={member.id as any}>
                     <span>
-                      {' '}
                       {member?.firstName} {member?.lastName}
                     </span>
                     <span> {member?.email}</span>
