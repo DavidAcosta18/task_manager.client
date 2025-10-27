@@ -47,7 +47,7 @@ Sigue estos pasos para configurar y ejecutar el proyecto localmente.
 ### 1. Clonar el Repositorio
 
 ```bash
-git clone [https://github.com/digheontech/rbpower.client](https://github.com/digheontech/rbpower.client) TaskFlow
+git clone [https://github.com/DavidAcosta18/task_manager.client](https://github.com/DavidAcosta18/task_manager.client) TaskFlow
 git checkout develop
 cd TaskFlow
 yarn
